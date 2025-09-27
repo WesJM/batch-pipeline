@@ -78,8 +78,8 @@ flowchart LR
 
 ### 1. Clone repo & setup environment
 ```bash
-git clone https://github.com/yourusername/pinball-maps-data-pipeline.git
-cd pinball-maps-data-pipeline
+git clone https://github.com/yourusername/batch-pipeline.git
+cd batch-pipeline
 cp .env.example .env   # update with your Snowflake credentials
 ```
 
