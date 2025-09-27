@@ -97,8 +97,10 @@ Login credentials (set in `docker-compose.yml`):
 - **Password:** airflow  
 
 From the UI, you can trigger DAGs such as:
-- `pinball_maps_api_data` → extracts raw data from the Pinball Maps API.
-- `pinball_maps_locations` → loads and transforms location data into Snowflake.
+- `dynamic_api_machines` → extracts machine data from the Pinball Maps API into Snowflake  
+- `dynamic_api_regions` → extracts region data from the Pinball Maps API into Snowflake  
+- `dynamic_api_location_types` → extracts location type data from the Pinball Maps API into Snowflake  
+- `pinball_maps_locations` → loads and transforms location data into Snowflake
 
 ---
 
