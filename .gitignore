@@ -1,0 +1,57 @@
+# ----------------------
+# dbt artifacts
+# ----------------------
+dbt/.user.yml
+dbt/target/
+dbt/dbt_packages/
+dbt/dbt_modules/
+dbt/logs/
+
+# ----------------------
+# Airflow artifacts
+# ----------------------
+# Airflow-generated logs (huge, not for version control)
+logs/
+airflow/logs/
+dags/__pycache__/
+dags/*.pyc
+dags/*.pyo
+airflow.cfg
+airflow_home/
+
+# ----------------------
+# Docker
+# ----------------------
+*.pid
+
+# ----------------------
+# Python
+# ----------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+Thumbs.db
+
+# -------------------------------------
+# Virtual environment + env files
+# -------------------------------------
+venv/
+.venv/
+.env
+.env.*
+
+# -------------------------------------
+# Logs
+# -------------------------------------
+*.log
+logs/
+plugins/logs/
+
+
+# ----------------------
+# OS cruft
+# ----------------------
+.DS_Store

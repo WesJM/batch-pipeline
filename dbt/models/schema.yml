@@ -1,0 +1,115 @@
+## dbt/models/schema.yml
+version: 2
+
+models:
+  - name: stg_machines
+    description: "Staging model for machines API data"
+    columns:
+      - name: machine_id
+        description: "Unique identifier for each machine"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_regions
+    description: "Staging model for regions API data"
+    columns:
+      - name: region_id
+        description: "Unique identifier for each region"
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_location_types
+    description: "Staging model for location types API data"
+    columns:
+      - name: location_type_id
+        description: "Unique identifier for each location type"
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_machines
+    description: "Dimension table containing machine details"
+    columns:
+      - name: machine_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_locations
+    description: "Dimension table for pinball machine locations. One row per location_id."
+    columns:
+      - name: location_id
+        description: "Primary key for the location dimension"
+        tests:
+          - not_null
+          - unique
+
+      - name: region_id
+        description: "Foreign key to dim_regions"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_regions')
+              field: region_id
+
+      - name: location_type_id
+        description: "Foreign key to dim_location_types"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_location_types')
+              field: location_type_id
+
+      - name: location_name
+        description: "Name of the location (e.g., Breeze Inn Lounge)"
+        tests:
+          - not_null
+
+      - name: latitude
+        description: "Geographic latitude of the location"
+        tests:
+          - not_null
+
+      - name: longitude
+        description: "Geographic longitude of the location"
+        tests:
+          - not_null
+
+      - name: machine_count
+        description: "Number of machines currently at this location"
+
+  - name: dim_location_types
+    description: "Dimension table containing location type details"
+    columns:
+      - name: location_type_id
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_location_machines
+    description: "Fact table for machine placements at locations"
+    columns:
+      - name: location_machine_xref_id
+        tests:
+          - not_null
+          - unique
+      - name: location_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_locations')
+              field: location_id
+      - name: machine_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_machines')
+              field: machine_id
+      - name: region_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_regions')
+              field: region_id

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: api_raw
+    database: PINBALL_MAPS_API_DB
+    schema: API_FETCH_SCHEMA
+    tables:
+      - name: STG_MACHINES_RAW
+      - name: STG_REGIONS_RAW
+      - name: STG_LOCATION_TYPE_RAW
+      - name: STG_LOCATIONS_RAW

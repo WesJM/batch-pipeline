@@ -1,0 +1,6 @@
+#  Keep OS X junk files and logs out
+__MACOSX
+.DS_Store
+logs/
+*.pyc
+__pycache__/
