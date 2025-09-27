@@ -85,7 +85,7 @@ cp .env.example .env   # update with your Snowflake credentials
 
 ### 2. Start services with Docker
 ```bash
-docker compose up -d
+docker compose up --build -d
 ```
 
 ### 3. Access the Airflow UI

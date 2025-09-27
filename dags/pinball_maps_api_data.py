@@ -75,7 +75,8 @@ def create_dynamic_api_dag(endpoint):
             )
 
         # Task dependencies
-        fetch_data(api_url=endpoint['url']) >> load_raw()
+        data = fetch_data(api_url=endpoint['url'])
+        load_raw(data)
 
     return api_etl_dag()
 
