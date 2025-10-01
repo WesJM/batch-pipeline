@@ -1,4 +1,4 @@
-# Pinball Maps Batch Data Pipeline (Airflow + dbt + Snowflake)
+# Pinball Maps Batch Data Pipeline
 
 ![Airflow](https://img.shields.io/badge/Airflow-3.0.6-blue)
 ![dbt](https://img.shields.io/badge/dbt-1.10.13-orange)
