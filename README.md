@@ -4,7 +4,7 @@
 ![dbt](https://img.shields.io/badge/dbt-1.10.13-orange)
 ![Snowflake](https://img.shields.io/badge/Snowflake-Cloud-lightblue)
 
-A modern **batch-oriented data pipeline** that extracts data from the **Pinball Maps API**, orchestrates workflows with **Apache Airflow**, transforms data into a **star schema with dbt**, and loads the results into **Snowflake** for analytics.  
+A modern **batch-oriented data pipeline** that extracts **API data** from [Pinball Maps](https://pinballmap.com/map). The pipeline orchestrates workflows with **Apache Airflow**, transforms data into a **star schema with dbt**, and loads the results into **Snowflake** for analytics.  
 
 The goal is to demonstrate end-to-end **batch data engineering skills**: API integration, workflow orchestration, transformation modeling (fact + dimension), cloud data warehouse integration, and containerized deployment.
 
